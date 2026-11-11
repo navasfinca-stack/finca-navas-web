@@ -121,9 +121,9 @@ p { margin: 0 0 1em; }
 }
 .hero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hero__shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.05) 35%, rgba(0,0,0,.6) 100%); }
-.hero__content { position: relative; padding: 0 var(--gutter) clamp(40px, 8vw, 80px); max-width: 1100px; }
+.hero__content { position: relative; padding: 110px var(--gutter) clamp(40px, 8vw, 80px); max-width: 1100px; }
 .hero__eyebrow { font-size: 14px; letter-spacing: -0.14px; font-weight: 500; opacity: .9; margin-bottom: 20px; }
-.hero__title { font-size: clamp(56px, 15vw, 150px); margin-bottom: 24px; }
+.hero__title { font-size: clamp(48px, min(11vw, 14svh), 136px); margin-bottom: 24px; }
 .hero__lead { font-size: 18px; max-width: 460px; margin-bottom: 28px; }
 
 /* ---------- Secciones ---------- */
@@ -164,6 +164,13 @@ p { margin: 0 0 1em; }
 .tags { list-style: none; padding: 0; margin: 4px 0 28px; display: flex; flex-wrap: wrap; gap: 8px; }
 .tags li { font-size: 14px; padding: 6px 14px; border: 1px solid var(--cream); border-radius: var(--r); }
 .tags--dark li { border-color: var(--ink); }
+
+/* ---------- Alta genética ---------- */
+.genetics { display: grid; grid-template-columns: 1fr 1.3fr; gap: var(--gap); align-items: stretch; }
+.genetics__lead { display: flex; flex-direction: column; gap: 8px; padding: 32px; }
+.genetics__lead .btn { align-self: flex-start; margin-top: auto; }
+.genetics__grid .card__num { margin-bottom: 20px; }
+@media (max-width: 900px) { .genetics { grid-template-columns: 1fr; } }
 
 /* ---------- Galería ---------- */
 .measure--left { margin: 0 0 48px; }
@@ -219,7 +226,7 @@ p { margin: 0 0 1em; }
 .footer { margin-top: var(--section); padding: 48px var(--gutter) 32px; border-top: 1px solid var(--ink); }
 .footer__top { display: flex; align-items: flex-end; gap: clamp(20px, 4vw, 56px); margin-bottom: 32px; flex-wrap: wrap; }
 .footer__logo { width: clamp(140px, 20vw, 240px); height: auto; }
-.footer__mark { font-size: clamp(64px, 14vw, 220px); line-height: .8; margin: 0; }
+.footer__mark { font-size: clamp(44px, 8.5vw, 150px); line-height: 1.02; margin: 0; }
 .footer__row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 14px; }
 .footer__row p { margin: 0; }
 
