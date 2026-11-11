@@ -1,0 +1,248 @@
+/* =========================================================
+   Finca Navas — sistema visual basado en DESIGN.md
+   Cream canvas · tinta negra · un solo violeta · radios 20px
+   ========================================================= */
+@font-face{font-family:'Anton';font-weight:400;font-display:swap;src:url('/assets/fonts/anton-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-weight:400;font-display:swap;src:url('/assets/fonts/inter-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-weight:500;font-display:swap;src:url('/assets/fonts/inter-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-weight:600;font-display:swap;src:url('/assets/fonts/inter-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-weight:700;font-display:swap;src:url('/assets/fonts/inter-latin-700-normal.woff2') format('woff2');}
+
+:root {
+  --cream: #f7f4e8;
+  --ink: #000000;
+  --stone: #c6c3ba;
+  --violet: #27685a; /* verde del logo Finca Navas (acento único) */
+  --teal: #72aea8;
+
+  --font-display: 'Anton', 'Tungsten', 'Druk Wide', Impact, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --r: 20px;
+  --pad: 24px;
+  --gap: 24px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --section: clamp(60px, 10vw, 128px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+p { margin: 0 0 1em; }
+
+.skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: var(--cream); padding: 8px 16px; border-radius: var(--r); z-index: 100; }
+.skip:focus { left: 8px; }
+
+/* ---------- Tipografía ---------- */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;              /* Anton ya es ultra-heavy */
+  line-height: 0.85;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin: 0;
+}
+.display--sm { font-size: 40px; margin-bottom: 16px; }
+.display--md { font-size: clamp(56px, 9vw, 90px); }
+.display--lg { font-size: clamp(64px, 12vw, 150px); }
+.body-lg { font-size: 18px; letter-spacing: -0.18px; }
+.subheading { font-size: 22px; line-height: 1; font-weight: 600; letter-spacing: -0.22px; margin: 0 0 12px; }
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font: 500 16px/1 var(--font-body);
+  padding: 14px 24px;
+  border-radius: var(--r);
+  border: 1px solid var(--ink);
+  text-decoration: none;
+  transition: background .2s, color .2s;
+}
+.btn--ghost { background: transparent; color: var(--ink); }
+.btn--ghost:hover { background: var(--ink); color: var(--cream); }
+.btn--fill { background: var(--ink); color: var(--cream); }
+.btn--fill:hover { background: transparent; color: var(--ink); }
+.btn--light { border-color: var(--cream); color: var(--cream); }
+.btn--light:hover { background: var(--cream); color: var(--ink); }
+.btn--light-fill { background: var(--cream); color: var(--ink); border-color: var(--cream); }
+.btn--light-fill:hover { background: transparent; color: var(--cream); }
+.btn:focus-visible, a:focus-visible, summary:focus-visible, button:focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; }
+
+/* ---------- Navegación ---------- */
+.nav {
+  position: absolute; inset: 0 0 auto 0; z-index: 20;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+  padding: 20px var(--gutter);
+  color: var(--cream);
+}
+.nav__brand { justify-self: center; display: block; line-height: 0; }
+.nav__brand img { height: 52px; width: auto; }
+.nav__cta { justify-self: end; padding: 12px 20px; border-color: var(--cream); color: var(--cream); }
+.nav__cta:hover { background: var(--cream); color: var(--ink); }
+.nav__burger { justify-self: start; width: 44px; height: 44px; background: none; border: 0; padding: 10px 8px; cursor: pointer; display: flex; flex-direction: column; justify-content: center; gap: 7px; }
+.nav__burger span { display: block; height: 2px; background: var(--cream); border-radius: 2px; transition: transform .25s; }
+.nav.is-open .nav__burger span:first-child { transform: translateY(4.5px) rotate(45deg); }
+.nav.is-open .nav__burger span:last-child { transform: translateY(-4.5px) rotate(-45deg); }
+.menu {
+  grid-column: 1 / -1; display: none; flex-direction: column; gap: 4px;
+  margin-top: 16px; padding: var(--pad); background: var(--cream); color: var(--ink);
+  border: 1px solid var(--ink); border-radius: var(--r);
+}
+.menu a { font: 400 40px/1 var(--font-display); text-transform: uppercase; text-decoration: none; padding: 6px 0; }
+.menu a:hover { color: var(--violet); }
+.nav.is-open .menu { display: flex; }
+.nav.is-open .nav__burger span { background: var(--cream); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative; min-height: 100svh;
+  display: flex; align-items: flex-end;
+  color: var(--cream);
+  border-radius: 0 0 40px 40px; overflow: hidden;
+}
+.hero__bg {
+  position: absolute; inset: 0;
+  /* Coloca tu foto en assets/img/hero.jpg — el degradado es el respaldo */
+  background:
+    url('/assets/img/hero.jpg') center / cover no-repeat,
+    linear-gradient(180deg, #9fb7a0 0%, #c9d3a8 38%, #6f8f3e 39%, #4f6e2a 62%, #2f4a1a 100%);
+}
+.hero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero__shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.05) 35%, rgba(0,0,0,.6) 100%); }
+.hero__content { position: relative; padding: 0 var(--gutter) clamp(40px, 8vw, 80px); max-width: 1100px; }
+.hero__eyebrow { font-size: 14px; letter-spacing: -0.14px; font-weight: 500; opacity: .9; margin-bottom: 20px; }
+.hero__title { font-size: clamp(56px, 15vw, 150px); margin-bottom: 24px; }
+.hero__lead { font-size: 18px; max-width: 460px; margin-bottom: 28px; }
+
+/* ---------- Secciones ---------- */
+.section { padding: var(--section) var(--gutter) 0; }
+.section--tight { padding-top: 60px; }
+.section--center { text-align: center; }
+.section__title { margin-bottom: 48px; }
+.measure { max-width: 640px; margin: 60px auto 0; text-align: left; }
+.section--center .measure.body-lg { text-align: center; margin-top: 32px; }
+
+/* Thumbnail dentro del titular */
+.token {
+  display: inline-block; vertical-align: middle;
+  width: .9em; height: .62em; margin: 0 .04em .12em;
+  border-radius: var(--r);
+  background: url('/assets/img/token.jpg') center / cover, linear-gradient(135deg, #7a9a45, #3e5a22);
+}
+
+/* ---------- Grid ---------- */
+.grid { display: grid; gap: var(--gap); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--align { align-items: center; }
+
+/* ---------- Cards ---------- */
+.card { border-radius: var(--r); padding: var(--pad); }
+.card--outline { background: var(--cream); border: 1px solid var(--ink); }
+.card--violet { background: var(--violet); color: var(--cream); }
+.card__num { font: 400 40px/0.85 var(--font-display); margin-bottom: 32px; }
+
+.product { display: flex; flex-direction: column; }
+.product p { flex: 0; }
+.product .btn { align-self: flex-start; margin-top: auto; }
+.product__img { aspect-ratio: 4 / 3; border-radius: var(--r); margin-bottom: 24px; }
+.product__img--lechones { background: url('/assets/img/lechones.jpg') center / cover, linear-gradient(135deg, #e8b9a6, #b77d68); }
+.product__img--name { background: url('/assets/img/name.jpg') center / cover, linear-gradient(135deg, #b09272, #6d5236); }
+
+.tags { list-style: none; padding: 0; margin: 4px 0 28px; display: flex; flex-wrap: wrap; gap: 8px; }
+.tags li { font-size: 14px; padding: 6px 14px; border: 1px solid var(--cream); border-radius: var(--r); }
+.tags--dark li { border-color: var(--ink); }
+
+/* ---------- Galería ---------- */
+.measure--left { margin: 0 0 48px; }
+.gallery { columns: 3; column-gap: 12px; }
+.g { position: relative; margin: 0 0 12px; border-radius: var(--r); overflow: hidden; background: var(--stone); break-inside: avoid; }
+.g img, .g video { width: 100%; height: auto; display: block; transition: transform .6s; }
+.g video { aspect-ratio: 9 / 16; object-fit: cover; }
+.g:hover img, .g:hover video { transform: scale(1.03); }
+.g figcaption {
+  position: absolute; left: 12px; bottom: 12px;
+  font-size: 14px; font-weight: 500; padding: 6px 14px;
+  background: var(--cream); color: var(--ink); border-radius: var(--r);
+}
+@media (max-width: 900px) { .gallery { columns: 2; column-gap: 8px; } .g { margin-bottom: 8px; } }
+@media (max-width: 480px) { .g figcaption { font-size: 12px; padding: 4px 10px; left: 8px; bottom: 8px; } }
+
+/* ---------- Mapa ---------- */
+.map { border-radius: var(--r); overflow: hidden; border: 1px solid var(--ink); aspect-ratio: 4 / 3; background: var(--stone); }
+.map iframe { width: 100%; height: 100%; border: 0; display: block; filter: grayscale(.3) sepia(.15); }
+
+/* ---------- FAQ ---------- */
+.faq { max-width: 900px; border-top: 1px solid var(--ink); }
+.faq details { border-bottom: 1px solid var(--ink); }
+.faq summary {
+  list-style: none; cursor: pointer;
+  display: flex; justify-content: space-between; gap: 16px;
+  padding: 24px 0; font-size: 22px; font-weight: 600; letter-spacing: -0.22px; line-height: 1.15;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; font-weight: 400; transition: transform .2s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { padding-bottom: 24px; max-width: 680px; }
+
+/* ---------- Contacto ---------- */
+.contact {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: 12px; max-width: 1200px; margin: 48px auto 0; text-align: left;
+}
+.contact__item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 20px 18px; border: 1px solid var(--ink); border-radius: var(--r);
+  text-decoration: none; transition: background .2s, color .2s;
+}
+.contact__item svg { width: 28px; height: 28px; flex: none; fill: currentColor; }
+.contact__item span { display: flex; flex-direction: column; min-width: 0; }
+.contact__item strong { font-weight: 600; }
+.contact__item small { font-size: 14px; opacity: .75; overflow-wrap: anywhere; }
+.contact__item:hover { background: var(--ink); color: var(--cream); }
+.contact__item--primary { background: var(--violet); color: var(--cream); border-color: var(--violet); }
+.contact__item--primary:hover { background: var(--ink); border-color: var(--ink); }
+
+/* ---------- Footer ---------- */
+.footer { margin-top: var(--section); padding: 48px var(--gutter) 32px; border-top: 1px solid var(--ink); }
+.footer__top { display: flex; align-items: flex-end; gap: clamp(20px, 4vw, 56px); margin-bottom: 32px; flex-wrap: wrap; }
+.footer__logo { width: clamp(140px, 20vw, 240px); height: auto; }
+.footer__mark { font-size: clamp(64px, 14vw, 220px); line-height: .8; margin: 0; }
+.footer__row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 14px; }
+.footer__row p { margin: 0; }
+
+/* ---------- WhatsApp flotante ---------- */
+.wa-float {
+  position: fixed; right: 16px; bottom: 16px; z-index: 50;
+  width: 56px; height: 56px; border-radius: var(--r);
+  background: var(--ink); color: var(--cream);
+  display: grid; place-items: center; border: 1px solid var(--cream);
+}
+.wa-float svg { width: 28px; height: 28px; fill: currentColor; }
+.wa-float:hover { background: var(--violet); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .grid--3, .grid--2 { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .nav { grid-template-columns: auto 1fr auto; gap: 8px; }
+  .nav__brand { justify-self: center; }
+  .nav__brand img { height: 42px; }
+  .nav__cta { padding: 10px 14px; font-size: 14px; }
+  .measure { margin-top: 40px; }
+  .faq summary { font-size: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
