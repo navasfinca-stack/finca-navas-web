@@ -54,8 +54,8 @@ p { margin: 0 0 1em; }
   text-transform: uppercase;
   margin: 0;
 }
-.display--sm { font-size: 40px; margin-bottom: 16px; }
-.display--md { font-size: clamp(56px, 9vw, 90px); }
+.display--sm { font-size: 40px; line-height: 1.05; margin-bottom: 16px; }
+.display--md { font-size: clamp(52px, 9vw, 90px); line-height: .9; }
 .display--lg { font-size: clamp(64px, 12vw, 150px); }
 .body-lg { font-size: 18px; letter-spacing: -0.18px; }
 .subheading { font-size: 22px; line-height: 1; font-weight: 600; letter-spacing: -0.22px; margin: 0 0 12px; }
@@ -134,13 +134,6 @@ p { margin: 0 0 1em; }
 .measure { max-width: 640px; margin: 60px auto 0; text-align: left; }
 .section--center .measure.body-lg { text-align: center; margin-top: 32px; }
 
-/* Thumbnail dentro del titular */
-.token {
-  display: inline-block; vertical-align: middle;
-  width: .9em; height: .62em; margin: 0 .04em .12em;
-  border-radius: var(--r);
-  background: url('/assets/img/token.jpg') center / cover, linear-gradient(135deg, #7a9a45, #3e5a22);
-}
 
 /* ---------- Grid ---------- */
 .grid { display: grid; gap: var(--gap); }
@@ -170,7 +163,7 @@ p { margin: 0 0 1em; }
 .genetics__lead { display: flex; flex-direction: column; gap: 8px; padding: 32px; }
 .genetics__lead .btn { align-self: flex-start; margin-top: auto; }
 .genetics__grid .card__num { margin-bottom: 20px; }
-@media (max-width: 900px) { .genetics { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .genetics { grid-template-columns: 1fr; } .genetics__lead { padding: 24px; } }
 
 /* ---------- Galería ---------- */
 .measure--left { margin: 0 0 48px; }
@@ -245,6 +238,13 @@ p { margin: 0 0 1em; }
   .grid--3, .grid--2 { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
+  .display { line-height: .98; }
+  .display--sm { line-height: 1.08; }
+  .display--sm { font-size: 34px; }
+  .body-lg { font-size: 16px; }
+  .tags { gap: 6px; margin-bottom: 24px; }
+  .tags li { font-size: 12px; padding: 4px 10px; }
+  .btn { font-size: 15px; padding: 12px 20px; }
   .nav { grid-template-columns: auto 1fr auto; gap: 8px; }
   .nav__brand { justify-self: center; }
   .nav__brand img { height: 42px; }
