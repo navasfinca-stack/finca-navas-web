@@ -219,7 +219,7 @@ p { margin: 0 0 1em; }
 .footer { margin-top: var(--section); padding: 48px var(--gutter) 32px; border-top: 1px solid var(--ink); }
 .footer__top { display: flex; align-items: flex-end; gap: clamp(20px, 4vw, 56px); margin-bottom: 32px; flex-wrap: wrap; }
 .footer__logo { width: clamp(140px, 20vw, 240px); height: auto; }
-.footer__mark { font-size: clamp(44px, 8.5vw, 150px); line-height: 1.02; margin: 0; }
+.footer__mark { font-size: clamp(44px, 8.5vw, 150px); line-height: 1.1; margin: 0; }
 .footer__row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 14px; }
 .footer__row p { margin: 0; }
 
