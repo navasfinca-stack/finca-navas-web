@@ -34,94 +34,170 @@
 
   <!-- ===== Datos estructurados: lo que leen Google y las IA ===== -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": ["LocalBusiness", "Organization"],
-        "@id": "https://fincanavas.com/#finca",
-        "name": "Finca Navas",
-        "description": "Finca agropecuaria familiar en Coclé, Panamá. Producción y venta de lechones y cultivo de ñame.",
-        "url": "https://fincanavas.com/",
-        "logo": "https://fincanavas.com/assets/img/logo-cuadrado.jpg",
-        "image": [
-          "https://fincanavas.com/assets/img/og-cover.jpg",
-          "https://fincanavas.com/assets/img/hero.jpg",
-          "https://fincanavas.com/assets/img/galeria/siembra-name-cocle.jpg",
-          "https://fincanavas.com/assets/img/galeria/maternidad-porcina.jpg"
-        ],
-        "telephone": "+507-6035-9444",
-        "email": "navasfinca@gmail.com",
-        "priceRange": "$$",
-        "currenciesAccepted": "USD",
-        "paymentAccepted": "Efectivo, Yappy, Transferencia",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Vía a Las Minas, Santa Cruz",
-          "addressLocality": "Penonomé",
-          "addressRegion": "Coclé",
-          "addressCountry": "PA"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "LocalBusiness",
+        "Organization"
+      ],
+      "@id": "https://fincanavas.com/#finca",
+      "name": "Finca Navas",
+      "description": "Finca agropecuaria familiar en Coclé, Panamá. Producción y venta de lechones y cultivo de ñame.",
+      "url": "https://fincanavas.com/",
+      "logo": "https://fincanavas.com/assets/img/logo-cuadrado.jpg",
+      "image": [
+        "https://fincanavas.com/assets/img/og-cover.jpg",
+        "https://fincanavas.com/assets/img/hero.jpg",
+        "https://fincanavas.com/assets/img/galeria/siembra-name-cocle.jpg",
+        "https://fincanavas.com/assets/img/galeria/maternidad-porcina.jpg"
+      ],
+      "telephone": "+507-6035-9444",
+      "email": "navasfinca@gmail.com",
+      "priceRange": "$$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": "Efectivo, Yappy, Transferencia",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Vía a Las Minas, Santa Cruz",
+        "addressLocality": "Penonomé",
+        "addressRegion": "Coclé",
+        "addressCountry": "PA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 8.652317,
+        "longitude": -80.354509
+      },
+      "hasMap": "https://www.google.com/maps?q=8.652317,-80.354509",
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Coclé"
         },
-        "geo": { "@type": "GeoCoordinates", "latitude": 8.652317, "longitude": -80.354509 },
-        "hasMap": "https://www.google.com/maps?q=8.652317,-80.354509",
-        "areaServed": [
-          { "@type": "AdministrativeArea", "name": "Coclé" },
-          { "@type": "AdministrativeArea", "name": "Panamá Oeste" },
-          { "@type": "AdministrativeArea", "name": "Herrera" },
-          { "@type": "Country", "name": "Panamá" }
-        ],
-        "openingHoursSpecification": [{
+        {
+          "@type": "AdministrativeArea",
+          "name": "Panamá Oeste"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Herrera"
+        },
+        {
+          "@type": "Country",
+          "name": "Panamá"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-          "opens": "07:00", "closes": "17:00"
-        }],
-        "sameAs": [
-          "https://www.instagram.com/fincanavas_panama",
-          "https://www.tiktok.com/@fincanavas_panama"
-        ],
-        "makesOffer": [
-          { "@type": "Offer", "itemOffered": { "@id": "https://fincanavas.com/#lechones" } },
-          { "@type": "Offer", "itemOffered": { "@id": "https://fincanavas.com/#name" } }
-        ]
-      },
-      {
-        "@type": "Product",
-        "@id": "https://fincanavas.com/#lechones",
-        "name": "Lechones",
-        "category": "Ganado porcino",
-        "additionalProperty": { "@type": "PropertyValue", "name": "Raza", "value": "Landrace" },
-        "description": "Lechones Landrace de alta genética, destetados y vacunados, criados en Finca Navas (Penonomé, Coclé). Mayor ganancia de peso diaria, mejor conversión alimenticia y lotes uniformes para un mejor retorno en el engorde.",
-        "brand": { "@id": "https://fincanavas.com/#finca" },
-        "image": "https://fincanavas.com/assets/img/lechones.jpg"
-      },
-      {
-        "@type": "Product",
-        "@id": "https://fincanavas.com/#name",
-        "name": "Ñame",
-        "category": "Tubérculos",
-        "description": "Ñame fresco cultivado en Coclé, Panamá. Venta por quintal o saco, al por mayor y menor.",
-        "brand": { "@id": "https://fincanavas.com/#finca" },
-        "image": "https://fincanavas.com/assets/img/name.jpg"
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "¿Dónde comprar lechones en Coclé?",
-            "acceptedAnswer": { "@type": "Answer", "text": "En Finca Navas, ubicada en Santa Cruz, vía a Las Minas, Penonomé, Coclé. Vendemos lechones destetados y vacunados; haz tu pedido por WhatsApp." } },
-          { "@type": "Question", "name": "¿Hacen entregas de lechones o ñame?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Sí, coordinamos entregas en Coclé y provincias cercanas según el volumen del pedido. También puedes retirar directamente en la finca." } },
-          { "@type": "Question", "name": "¿Cómo se vende el ñame?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Vendemos ñame fresco por quintal o por saco, al por mayor y al detal. Consulta disponibilidad de cosecha por WhatsApp." } },
-          { "@type": "Question", "name": "¿Qué raza de lechones venden?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Trabajamos con genética Landrace, una de las razas porcinas más usadas en el mundo por su cuerpo largo, buena ganancia de peso y carne magra. Nuestras cerdas madres Landrace también destacan por ser prolíficas y buenas madres, lo que da camadas numerosas y lechones vigorosos." } },
-          { "@type": "Question", "name": "¿Qué ventajas tienen los lechones de alta genética?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Crecen más rápido (mayor ganancia de peso diaria), necesitan menos alimento por kilo de carne (mejor conversión alimenticia), salen en lotes más uniformes y producen canales más magras. Eso se traduce en menos días de engorde, menor costo de alimento y un mejor retorno de tu inversión." } },
-          { "@type": "Question", "name": "¿Los lechones vienen vacunados?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Sí. Cada lechón tiene registro de nacimiento, vacunas y desparasitación llevado en nuestro sistema de control de la finca." } }
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "07:00",
+          "closes": "17:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/fincanavas_panama",
+        "https://www.tiktok.com/@fincanavas_panama"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Productos de Finca Navas",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Thing",
+              "name": "Lechones",
+              "description": "Lechones Landrace de alta genética, destetados y vacunados, criados en Finca Navas (Penonomé, Coclé). Mayor ganancia de peso diaria, mejor conversión alimenticia y lotes uniformes para un mejor retorno en el engorde. Raza: Landrace.",
+              "image": "https://fincanavas.com/assets/img/lechones.jpg"
+            },
+            "availability": "https://schema.org/InStock",
+            "areaServed": "Panamá",
+            "seller": {
+              "@id": "https://fincanavas.com/#finca"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Thing",
+              "name": "Ñame",
+              "description": "Ñame fresco cultivado en Coclé, Panamá. Venta por quintal o saco, al por mayor y menor.",
+              "image": "https://fincanavas.com/assets/img/name.jpg"
+            },
+            "availability": "https://schema.org/InStock",
+            "areaServed": "Panamá",
+            "seller": {
+              "@id": "https://fincanavas.com/#finca"
+            }
+          }
         ]
       }
-    ]
-  }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Dónde comprar lechones en Coclé?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En Finca Navas, ubicada en Santa Cruz, vía a Las Minas, Penonomé, Coclé. Vendemos lechones destetados y vacunados; haz tu pedido por WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hacen entregas de lechones o ñame?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, coordinamos entregas en Coclé y provincias cercanas según el volumen del pedido. También puedes retirar directamente en la finca."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se vende el ñame?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vendemos ñame fresco por quintal o por saco, al por mayor y al detal. Consulta disponibilidad de cosecha por WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué raza de lechones venden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trabajamos con genética Landrace, una de las razas porcinas más usadas en el mundo por su cuerpo largo, buena ganancia de peso y carne magra. Nuestras cerdas madres Landrace también destacan por ser prolíficas y buenas madres, lo que da camadas numerosas y lechones vigorosos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué ventajas tienen los lechones de alta genética?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Crecen más rápido (mayor ganancia de peso diaria), necesitan menos alimento por kilo de carne (mejor conversión alimenticia), salen en lotes más uniformes y producen canales más magras. Eso se traduce en menos días de engorde, menor costo de alimento y un mejor retorno de tu inversión."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Los lechones vienen vacunados?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Cada lechón tiene registro de nacimiento, vacunas y desparasitación llevado en nuestro sistema de control de la finca."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
